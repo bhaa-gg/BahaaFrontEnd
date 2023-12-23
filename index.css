@@ -34,7 +34,7 @@ section .bokmarkHead {
 }
 
 section h1::selection, h4::selection  {
-background-color:bisque;
+    background-color:bisque;
 }
 section .bokmarkHead h1 {
     position: relative;
@@ -65,7 +65,7 @@ section .bokmarkHead h1:hover::before {
 
 section .modal-dialog {
     max-width: 70% !important;
-    height: 100%;
+    height: fit-content;
 }
 
 #card {
@@ -87,7 +87,17 @@ tr td .green{
 
 @media (max-width: 992px) {
     #card {
-        width: 65% !important;
+        width: 95% !important;
     }
     
+    section .modal-dialog {
+        width: 100% !important;
+        height: fit-content;
+        margin: 150px auto;
+    }
+    
+    section .bokmarkHead h1 {
+        letter-spacing: 10px;
+        font-size: 45px;
+    }
 }
