@@ -1,0 +1,93 @@
+body {
+    background-image: url("Flag_of_Palestine.svg.png");
+    min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+
+}
+
+.allllll {
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+}
+
+.bga {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+h4 {
+    margin: auto;
+    width: fit-content;
+    background-image: linear-gradient(to right, green, white, red) !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section .bokmarkForm {
+    border: 2px black dotted;
+    border-width: 2px 0 2px 0;
+}
+
+section .bokmarkHead {
+    padding: 5% 0;
+    background-color: transparent;
+}
+
+section h1::selection, h4::selection  {
+background-color:bisque;
+}
+section .bokmarkHead h1 {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+    z-index: 0;
+    font-family: 'Pacifico', cursive;
+    color: white;
+}
+
+section .bokmarkHead h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    bottom: 10px;
+    background-image: linear-gradient(to bottom, black , white , green);
+    transition: height 350ms;
+    z-index: -1;
+    border-radius: 2px;
+}
+
+section .bokmarkHead h1:hover::before {
+    height: 50%;
+}
+
+section .modal-dialog {
+    max-width: 70% !important;
+    height: 100%;
+}
+
+#card {
+    position: fixed;
+    width: 40% !important;
+    z-index: 55555;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+tr td .green{
+    background-color: green;
+}
+.bokmarkForm label
+{
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    #card {
+        width: 65% !important;
+    }
+    
+}

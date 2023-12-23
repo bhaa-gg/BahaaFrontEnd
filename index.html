@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="allllll">
+        <div id="card" class="card  bg-body-secondary  d-none">
+            <div class="cardHead d-flex    justify-content-between">
+                <div class="i  d-flex gap-3 align-items-center p-3  w-25">
+
+                    <i class="fa-solid fa-circle" style="color: black; font-size: 25px; "></i>
+                    <i class="fa-solid fa-circle" style="color: white; font-size: 25px; "></i>
+                    <i class="fa-solid fa-circle" style="color: green; font-size: 25px; "></i>
+                </div>
+                <div class="ex d-flex align-items-center pe-2   ">
+
+                    <button onclick="hide()" class="btn-close"></button>
+                </div>
+            </div>
+            <div class="cardContent  px-4 py-2">
+                <p class=" fw-bold display-6 fs-4">Site Name or Url is not valid, Please follow the rules below : </p>
+                <ul class="list-unstyled">
+                    <li class="display-5 fs-5 fw-medium py-2"><span><i
+                                class="fa-regular fs-5 fa-circle-right pe-2"></i></span>Site
+                        name must contain at least 3 characters </li>
+                    <li class="display-5 fs-5 fw-medium py-2"><span><i
+                                class="fa-regular fs-5 fa-circle-right pe-2"></i></span>Site
+                        URL must be a valid one </li>
+                </ul>
+            </div>
+        </div>
+
+        <section>
+            <div class="container-lg">
+                <div class="bokmarkHead text-center">
+                    <h1>Bookmarker </h1>
+                </div>
+                <div class="bokmarkForm d-flex flex-column py-3">
+                    <h4 class="text-center"><span><i class="fa-solid fa-bookmark fs-5"></i></span> Bookmark your
+                        favorite
+                        sites
+                        <span><i class="fa-solid fa-bookmark fs-5"></i></span>
+                    </h4>
+
+                    <div class="bookmarkForm1 my-3">
+                        <label class="py-3 text-white fw-bold" for="sName"> <span><i
+                                    class="fa-solid fa-book-bookmark pe-2"></i></span>
+                            SiteName
+                        </label>
+                        <input onkeyup="valid(this.value)" class="form-control " type="text" id="sName"
+                            placeholder="BookmarkName">
+                    </div>
+                    <div class="bookmarkForm2 my-3">
+                        <label class="py-3 text-white fw-bold" for="url"> <span><i
+                                    class="fa-solid fa-link pe-2"></i></span> Site URL
+                        </label>
+                        <input onkeyup="validUrl(this.value)" class="form-control " type="url" id="url"
+                            placeholder="URL">
+                    </div>
+                    <button onclick="add()"
+                        class=" btn  text-black btn-outline-light fw-bolder px-4  m-auto my-3 ">ADD</button>
+                    <!-- =========  -->
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="bga">
+                                    <div class="modal-header">
+                                        <div class="i  d-flex gap-3 align-items-center p-3  w-25">
+
+                                            <i class="fa-solid fa-circle" style="color: black; font-size: 25px; "></i>
+                                            <i class="fa-solid fa-circle" style="color: white; font-size: 25px; "></i>
+                                            <i class="fa-solid fa-circle" style="color: green; font-size: 25px; "></i>
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 class="text-center"><span><i class="fa-solid fa-bookmark fs-5"></i></span>
+                                            Bookmark
+                                            your favorite
+                                            sites
+                                            <span><i class="fa-solid fa-bookmark fs-5"></i></span>
+                                        </h4>
+
+                                        <div class="bookmarkForm1 my-3">
+                                            <label class="py-3" for="sName1"> <span><i
+                                                        class="fa-solid fa-book-bookmark pe-2"></i></span>
+                                                Site Name
+                                            </label>
+                                            <input onkeyup="valid(this.value)" class="form-control" type="text"
+                                                id="sName1" placeholder="BookmarkName">
+                                        </div>
+                                        <div class="bookmarkForm2 my-3">
+                                            <label class="py-3" for="url1"> <span><i
+                                                        class="fa-solid fa-link pe-2"></i></span>
+                                                Site URL </label>
+                                            <input onkeyup="validUrl(this.value)" class="form-control" type="url"
+                                                id="url1" placeholder="URL">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button onclick="Update2()" type="button"
+                                            class="btn btn-info text-white fw-bolder px-4 m-auto"
+                                            data-bs-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="formTable text-center mt-4">
+                    <table class="table rounded-2">
+                        <thead>
+                            <th>Index </th>
+                            <th>Website Name </th>
+                            <th>Visit </th>
+                            <th>Delete </th>
+                            <th>Update </th>
+                        </thead>
+                        <tbody id="tables">
+
+                        </tbody>
+                    </table>
+                    <button onclick="clearAll()" class="btn btn-outline-dark fw-bold  px-5 my-4">clearAll</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="java/bootstrap.bundle.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
