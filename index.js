@@ -39,7 +39,7 @@ function display() {
     
                 <tr class="table-danger">
                     <td>${i + 1}</td>
-                    <td>${webList[i].name}</td>
+                    <td class="fw-bold">${webList[i].name}</td>
                     <td><a target="_blank" href="${webList[i].url}" class="btn btn-dark"><i
                                 class="fa-solid fa-eye pe-1"></i>Visit</a></td>
                                 <td><button onclick="delet(${i})" class="btn btn-white border border-1 border-black  shadow"><i
